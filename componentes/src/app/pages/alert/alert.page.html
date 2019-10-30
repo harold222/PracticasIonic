@@ -1,0 +1,18 @@
+<app-header [titulo]="titulo || 'Alert Page'"></app-header>
+<!-- si es nulo o no existe colocara el alert page -->
+
+<ion-content class="ion-padding">
+
+    <ion-button color="danger"
+        expand="full"
+        (click)="presentAlert()"
+        >Mostrar alerta
+    </ion-button>
+
+    <ion-button color="secondary"
+        expand="full"
+        (click)="presentAlertPrompt()">
+        Mostrar alerta input
+    </ion-button>
+
+</ion-content>

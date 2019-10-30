@@ -1,0 +1,27 @@
+.ToolbarPrincipal{
+    color: rgb(230, 230, 230);
+    font-size: 18px;
+}
+
+.contentPrincipal{
+    background:#8ba987 url('../../../assets/img/8.jpg') no-repeat center center;
+    background-size:100% 100%;
+}
+
+.textoImagen{
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.botonPrincipal{
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    transition: all 1s;
+}
+
+.botonPrincipal:hover{
+    color: rgb(139, 138, 138);
+    background: #921212;
+    font-size: 19px;
+}

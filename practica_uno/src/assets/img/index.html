@@ -1,0 +1,100 @@
+
+<!-- saved from url=(0050)file:///C:/Users/t1har/OneDrive/Desktop/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script>
+	function buscar(array1, array2) {
+		if(array1.lenght != 0){
+			var nuevoArray = new Array();
+		    var llaves = new Array();
+		    var label = new Array();
+		    var valores = new Array();
+
+		    for (let i = 0; i < array2.length; i++) {
+		    	for (let j = 0; j < array2.length; j++) {
+		    		if(j == 1){
+						llaves[i] = array2[i][j]; //obtengo las llaves
+		    		}
+		    	}
+		    }
+
+		    for (let i = 0; i < array2.length; i++) {
+		    	valores[i] = array2[i][0]; //obntengo los valores
+		    }
+
+		    //Busco si se encuentra repetida una llave en el array me devuelve las posiciones de donde lo encontro
+		    var posicionesRepetidos = new Array();
+
+		    for (let i = 0; i < llaves.length; i++) {
+		    	let indices = [];
+		    	let element = llaves[i]; //busco cada elemento
+		    	console.log("son: "+element);
+				let idx = llaves.indexOf(element);
+				while (idx != -1) {
+				  indices.push(idx);
+				  idx = llaves.indexOf(element, idx + 1);
+				}
+
+				if(indices.length > 1)
+					posicionesRepetidos.push(indices); //guardo los que estan repetidos
+		    }
+
+		    
+
+		    if(posicionesRepetidos.length  > 2){//se guardan las mismas llaves
+		    	
+		    	for (let i = posicionesRepetidos/2; i < posicionesRepetidos.length; i++) {
+		    		delete posicionesRepetidos[i];
+		    	}
+		    }
+console.log("son: "+posicionesRepetidos);
+			let valorAnadido = array2[posicionesRepetidos[1]][0]; //deberia cambiar esto
+			//array2[posicionesRepetidos[0]].push(valorAnadido);
+
+
+			delete array2[posicionesRepetidos[1]];
+
+			var devolver = [];
+			for (let i = 0; i < 3; i++) {
+				devolver[i] = new Array();
+			}
+
+			for (let i = 0; i < array1.length; i++) {
+				for (let j = 0; j < array1[i].length; j++) {
+
+					if(j == 1){ //obtengo el label
+						//console.log(array1[i][j]+", "+array2[i][j-1]);
+						//devolver.push(array1[i][j]);
+						devolver[i].push(array1[i][j],array2[i][j-1]);
+					}
+				}
+			}
+
+			devolver[posicionesRepetidos[0]].push(valorAnadido);
+			console.log(devolver);
+		}
+	}
+
+	var array = [["soccer","Soccer"], 
+ 				["golf","Golf PGA"]];
+
+	var arg1 = [["ball","soccer"], 
+ 				["ball","golf"], 
+ 				["racket","tennis"], 
+ 				["gloves","soccer"],
+ 				["stick","golf"]];
+
+	buscar(array, arg1);
+</script>
+
+<!-- 
+	[
+		["Soccer","ball","gloves"], 
+ 		["Golf PGA","ball"], 
+ 		["Tennis Tour","racket"]
+ 	]
+
+	La funcion llamada findElementsByKey recibe dos arreglos, 
+	el primer arrreglo contiene la llave y el label de cada deporte, 
+	el segundo arreglo contiene arreglos con llave de deporte y elemento para practicarlo,
+	la función debe retornar un arreglo con el label de cada deporte en la primera posición 
+	y los valores de cada elemento del deporte en las siguientes posiciones.
+ --></head><body></body></html>
