@@ -7,5 +7,15 @@
       <ion-label>Item {{i+1}}</ion-label>
     </ion-item>
   </ion-list>
-
+<!-- https://ionicframework.com/docs/api/infinite-scroll -->
+<!--Cuando este 150px cerca del fondo cargara mas elementos mediante loadData-->
+  <ion-infinite-scroll threshold="150px"
+                       (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="dots"
+      loadingText="Cargando...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+<!-- Loading spinner es el icono que mostrare puede ser bubbles, circles, crescent, dots, lines,
+     lines small, null-->
 </ion-content>
