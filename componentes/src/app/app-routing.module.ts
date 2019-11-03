@@ -15,7 +15,13 @@ const routes: Routes = [
   { path: 'grid', loadChildren: './pages/grid/grid.module#GridPageModule' },
   { path: 'infinite', loadChildren: './pages/infinite/infinite.module#InfinitePageModule' },
   { path: 'input', loadChildren: './pages/input/input.module#InputPageModule' },
-  { path: 'list', loadChildren: './pages/list/list.module#ListPageModule' }
+  { path: 'list', loadChildren: './pages/list/list.module#ListPageModule' },
+  { path: 'reorder', loadChildren: './pages/reorder/reorder.module#ReorderPageModule' },
+  { path: 'loading', loadChildren: './pages/loading/loading.module#LoadingPageModule' },
+  { path: 'modal', loadChildren: './pages/modal/modal.module#ModalPageModule' },
+  { path: 'popover', loadChildren: './pages/popover/popover.module#PopoverPageModule' },
+  { path: 'progess-bar', loadChildren: './pages/progess-bar/progess-bar.module#ProgessBarPageModule' },
+  { path: 'refresh', loadChildren: './pages/refresh/refresh.module#RefreshPageModule' }
 ];
 
 @NgModule({

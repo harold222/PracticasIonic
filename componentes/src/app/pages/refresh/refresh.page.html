@@ -1,0 +1,13 @@
+<app-header titulo="Refresher"></app-header>
+
+<ion-content class="ion-padding">
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)" 
+                 pullFactor="0.8" pullMin="60"
+                 pullMax="120">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <h1>Pull to refresh</h1>
+
+</ion-content>

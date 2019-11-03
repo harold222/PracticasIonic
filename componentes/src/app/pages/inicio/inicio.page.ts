@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuController } from '@ionic/angular';
+import { Componente } from '../../interfaces/interfaces';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-inicio',
@@ -7,79 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioPage implements OnInit {
 
-  components: Componente[] = [
-    {
-      icon: 'american-football',
-      name: 'Action sheet',
-      redirecTo: '/action-sheet'
-    },
-    {
-      icon: 'appstore',
-      name: 'Alert',
-      redirecTo: '/alert'
-    },
-    {
-      icon: 'beaker',
-      name: 'Avatars',
-      redirecTo: '/avatar'
-    },
-    {
-      icon: 'radio-button-on',
-      name: 'Button and router',
-      redirecTo: '/botones'
-    },
-    {
-      icon: 'card',
-      name: 'Cards',
-      redirecTo: '/tarjetas'
-    },
-    {
-      icon: 'checkmark-circle-outline',
-      name: 'Check Box',
-      redirecTo: '/checkbox'
-    },
-    {
-      icon: 'calendar',
-      name: 'Date time',
-      redirecTo: '/datetime'
-    },
-    {
-      icon: 'car',
-      name: 'Fabs',
-      redirecTo: '/fab'
-    },
-    {
-      icon: 'grid',
-      name: 'Grid row col',
-      redirecTo: '/grid'
-    },
-    {
-      icon: 'infinite',
-      name: 'Infinite Scroll',
-      redirecTo: '/infinite'
-    },
-    {
-      icon: 'hammer',
-      name: 'Input',
-      redirecTo: '/input'
-    },
-    {
-      icon: 'list',
-      name: 'List',
-      redirecTo: '/list'
-    }
+  components: any;
 
-  ];
-
-  constructor() { }
-
+  constructor( private menu:MenuController, private data: DataService ) { }
+  
   ngOnInit() {
+    this.components = this.data.getMenu();
   }
 
-}
+  toggleMenu() {
+    this.menu.toggle();
+  }
 
-interface Componente {
-  icon: string;
-  name: string;
-  redirecTo: string;
 }
