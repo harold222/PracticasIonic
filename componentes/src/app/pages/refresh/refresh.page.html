@@ -2,12 +2,16 @@
 
 <ion-content class="ion-padding">
 
-  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)" 
-                 pullFactor="0.8" pullMin="60"
-                 pullMax="120">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
 
-  <h1>Pull to refresh</h1>
+  <h1 class="animated fadeIn fast" *ngIf="items.length === 0">Pull to refresh</h1>
+
+  <ion-list *ngIf="items.length > 0" class="animated fadeIn fast">
+    <ion-item *ngFor="let c of items; let i = index;">
+      Item {{i+1}}
+    </ion-item>
+  </ion-list>
 
 </ion-content>

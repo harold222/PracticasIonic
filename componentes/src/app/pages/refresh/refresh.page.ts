@@ -16,8 +16,9 @@ export class RefreshPage implements OnInit {
 
   doRefresh( event ) {
     setTimeout(() => {
-      this.items = Array(40);
-      event.taget.complete();
+      this.items = Array(20);
+      event.target.complete();
     }, 1500);
   }
+
 }
